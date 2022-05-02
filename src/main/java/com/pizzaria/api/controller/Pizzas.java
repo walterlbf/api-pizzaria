@@ -3,6 +3,8 @@ package com.pizzaria.api.controller;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.pizzaria.api.model.Pizza;
@@ -18,6 +20,11 @@ public class Pizzas {
   @GetMapping // quando chegar uma requisição get pizzas.
   public List<Pizza> findAll() {
     return pizzaRepository.findAll();
+  }
+
+  @PostMapping
+  public Pizza addPizza(@RequestBody Pizza pizza) {
+    return pizzaRepository.save(pizza);
   }
 
 }
