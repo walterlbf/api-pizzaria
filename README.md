@@ -11,7 +11,7 @@ Spring Boot para ajudá-los a cadastrar todos os sabores de pizza.
 - Spring Boot
 - JPA
 
-##Como Rodar
+## Como Rodar
 - Abra o terminal
 - Clone este repositorio com `git@github.com:walterlbf/api-pizzaria.git`
 - $ cd ./api-pizzaria
