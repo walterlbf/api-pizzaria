@@ -61,7 +61,13 @@ public class Pizzas {
   }
 
   @DeleteMapping("/pizzas/{id}") // @PathVariable valor da variavel faz parte da url
-  public void removeById(@PathVariable("id") long id) {
-    pizzaRepository.deleteById(id);
+  public ResponseEntity<HttpStatus> removeById(@PathVariable("id") long id) {
+    try {
+      pizzaRepository.deleteById(id);
+      return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    } catch (Exception e) {
+      // TODO: handle exception
+      return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+    }
   }
 }
